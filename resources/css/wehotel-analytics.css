@@ -1,0 +1,493 @@
+/* WE HOTEL · Analitik baru — berbeda dari Ringkasan */
+.wha .wvi-page {
+    color: #233d54;
+    font-family: "DM Sans", sans-serif;
+}
+.wvi-page * {
+    box-sizing: border-box;
+}
+.wvi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+.wvi-eyebrow {
+    color: #6992ae;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+    margin-bottom: 15px;
+}
+.wvi-header h1 {
+    margin: 0;
+    font:
+        650 clamp(29px, 2.65vw, 41px)/1.2 "Outfit",
+        sans-serif;
+    letter-spacing: -0.045em;
+    color: #22394d;
+}
+.wvi-header h1 span {
+    color: #d4af69;
+}
+.wvi-header p {
+    color: #8499ab;
+    font-size: 12px;
+    margin-top: 12px;
+    line-height: 1.7;
+}
+.wvi-data-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    background: #fff;
+    border: 1px solid #dce7ef;
+    border-radius: 10px;
+    color: #637e95;
+    font-size: 11px;
+    font-weight: 700;
+}
+.wvi-toolbar {
+    display: flex;
+    gap: 14px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px;
+    border: 1px solid #dde9f0;
+    border-radius: 13px;
+    background: #fff;
+    margin-bottom: 13px;
+}
+.wvi-periods {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+.wvi-periods a {
+    padding: 9px 11px;
+    border-radius: 8px;
+    color: #64819a;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+.wvi-periods a.active {
+    color: #fff;
+    background: #192c43;
+}
+.wvi-periods a:hover:not(.active) {
+    background: #f0f6fa;
+}
+.wvi-custom {
+    display: flex;
+    align-items: end;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+.wvi-custom label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #64819a;
+    font-size: 10px;
+    font-weight: 700;
+}
+.wha .wvi-custom input {
+    padding: 7px 8px;
+    border: 1px solid #dde7ee;
+    border-radius: 8px;
+    height: 36px;
+    font-size: 11px;
+    color: #42637c;
+    background: #fff;
+}
+.wha .wvi-custom button {
+    background: #294b67;
+    color: #fff;
+    height: 36px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 11px;
+}
+.wvi-form-error {
+    color: #b45848;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+.wvi-information {
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+    background: #edf5fa;
+    color: #577c98;
+    border: 1px solid #dcebf3;
+    border-radius: 11px;
+    padding: 13px 16px;
+    font-size: 11px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+.wvi-information svg {
+    flex: 0 0 auto;
+    margin-top: 1px;
+}
+.wvi-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.wvi-panel {
+    background: #fff;
+    border: 1px solid #dfe9f0;
+    border-radius: 17px;
+    padding: 25px;
+    min-width: 0;
+    box-shadow: 0 10px 28px rgba(25, 44, 67, 0.035);
+}
+.wvi-panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 27px;
+}
+.wvi-panel-head h2 {
+    font:
+        650 18px "Outfit",
+        sans-serif;
+    color: #2b485f;
+    margin: 0;
+}
+.wvi-panel-head p {
+    color: #8da4b4;
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 6px 0 0;
+}
+.wvi-muted {
+    color: #92a7b8;
+    font-size: 10px;
+    line-height: 1.8;
+    margin: 16px 0 0;
+}
+.wvi-donut-layout {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 8px 0;
+}
+.wvi-donut {
+    position: relative;
+    flex: 0 0 214px;
+    width: 214px;
+    height: 214px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.wvi-donut-hole {
+    width: 67%;
+    height: 67%;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+.wvi-donut-hole strong {
+    color: #2a4c68;
+    font:
+        650 37px/1.1 "Outfit",
+        sans-serif;
+}
+.wvi-donut-hole small {
+    font-size: 10px;
+    color: #8ba2b3;
+    margin-top: 6px;
+}
+.wvi-legend {
+    flex: 1 1 180px;
+    display: grid;
+    gap: 18px;
+}
+.wvi-legend-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 3px;
+}
+.wvi-legend-row > span {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #64839b;
+    font-size: 11px;
+}
+.wvi-legend-row i {
+    display: block;
+    width: 11px;
+    height: 11px;
+    border-radius: 4px;
+}
+.wvi-legend-row strong {
+    color: #355c78;
+    font-size: 12px;
+}
+.wvi-legend-row small {
+    grid-column: 1 / -1;
+    margin-left: 21px;
+    color: #a0b0bd;
+    font-size: 10px;
+}
+.wvi-categories {
+    display: grid;
+    gap: 19px;
+}
+.wvi-category-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.wvi-category-top span {
+    color: #62839b;
+    font-size: 11px;
+}
+.wvi-category-top strong {
+    font-size: 12px;
+    color: #3d6481;
+    white-space: nowrap;
+}
+.wvi-category-top small {
+    color: #93aab9;
+    font-weight: 400;
+}
+.wvi-category-top em {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 3px 5px;
+    border-radius: 4px;
+    background: #f0f3f5;
+    font-style: normal;
+    font-size: 9px;
+    color: #91a0ac;
+}
+.wvi-track {
+    width: 100%;
+    height: 8px;
+    background: #eaf1f5;
+    overflow: hidden;
+    border-radius: 25px;
+}
+.wvi-track div {
+    height: 100%;
+    background: linear-gradient(90deg, #365b79, #96b7c9);
+    border-radius: inherit;
+}
+.wvi-category-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    color: #9aafbc;
+    font-size: 10px;
+    margin-top: 7px;
+}
+.wvi-category-foot strong {
+    color: #4a7795;
+}
+.wvi-trend-panel {
+    margin-top: 20px;
+}
+.wvi-mini-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #e3ecf2;
+    border-radius: 8px;
+    padding: 8px 11px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #6489a4;
+    background: #f6f9fb;
+    white-space: nowrap;
+}
+.wvi-chart-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+}
+.wvi-line-chart {
+    display: block;
+    width: 100%;
+    min-width: 470px;
+    height: auto;
+}
+.wvi-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 19px;
+    margin-top: 20px;
+}
+.wvi-comparisons {
+    display: grid;
+    gap: 17px;
+}
+.wvi-comparisons > div {
+    display: grid;
+    gap: 5px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #edf2f5;
+}
+.wvi-comparisons span {
+    font-size: 11px;
+    color: #8099ac;
+    font-weight: 700;
+}
+.wvi-comparisons strong {
+    font:
+        650 21px "Outfit",
+        sans-serif;
+    color: #284a63;
+}
+.wvi-comparisons small {
+    color: #9cadbc;
+    font:
+        400 11px "DM Sans",
+        sans-serif;
+}
+.wvi-comparisons em {
+    font-style: normal;
+    color: #648eaa;
+    font-size: 10px;
+}
+.wvi-warning-icon {
+    color: #bd8d65;
+}
+.wvi-low-value {
+    color: #274660;
+    font:
+        650 36px "Outfit",
+        sans-serif;
+}
+.wvi-low-value small {
+    font:
+        400 11px "DM Sans",
+        sans-serif;
+    color: #9aaebc;
+}
+.wvi-low-list {
+    display: grid;
+    gap: 12px;
+    margin: 18px 0;
+}
+.wvi-low-list > div {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #67869b;
+}
+.wvi-low-list strong {
+    color: #b0795e;
+    white-space: nowrap;
+}
+.wvi-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #487695;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 800;
+    margin-top: 18px;
+}
+.wvi-gold {
+    color: #bd954c;
+}
+.wvi-insight-list {
+    display: grid;
+    gap: 17px;
+}
+.wvi-insight-list > div {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.wvi-insight-list svg {
+    color: #6d95ae;
+    flex: 0 0 auto;
+}
+.wvi-insight-list p {
+    color: #738d9f;
+    font-size: 11px;
+    line-height: 1.75;
+    margin: 0;
+}
+.wvi-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9aafbd;
+    font-size: 10px;
+    gap: 8px;
+    margin-top: 24px;
+}
+@media (max-width: 1180px) {
+    .wvi-bottom-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .wvi-bottom-grid .wvi-panel:last-child {
+        grid-column: 1 / -1;
+    }
+}
+@media (max-width: 980px) {
+    .wvi-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 720px) {
+    .wvi-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+    .wvi-bottom-grid .wvi-panel:last-child {
+        grid-column: auto;
+    }
+    .wvi-toolbar {
+        align-items: stretch;
+    }
+    .wvi-custom {
+        width: 100%;
+    }
+    .wvi-panel {
+        padding: 19px;
+    }
+    .wvi-donut {
+        flex-basis: 175px;
+        width: 175px;
+        height: 175px;
+    }
+}
+@media (max-width: 440px) {
+    .wvi-custom label {
+        flex: 1 1 115px;
+    }
+    .wvi-custom input {
+        width: 100%;
+    }
+    .wvi-header h1 {
+        font-size: 29px;
+    }
+}

@@ -10,19 +10,37 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 void createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
+
     layout: (name) => {
         switch (true) {
+            // Halaman utama Laravel
             case name === 'welcome':
                 return null;
+
+            // Halaman tamu WE HOTEL
+            case name.startsWith('guest/'):
+                return null;
+
+            // Dashboard admin WE HOTEL
+            case name.startsWith('admin/'):
+                return null;
+
+            // Halaman autentikasi Laravel
             case name.startsWith('auth/'):
                 return AuthLayout;
+
+            // Pengaturan akun Laravel
             case name.startsWith('settings/'):
                 return [AppLayout, SettingsLayout];
+
+            // Halaman Laravel lainnya
             default:
                 return AppLayout;
         }
     },
+
     strictMode: true,
+
     withApp(app) {
         return (
             <TooltipProvider delayDuration={0}>
@@ -31,6 +49,7 @@ void createInertiaApp({
             </TooltipProvider>
         );
     },
+
     progress: {
         color: '#4B5563',
     },

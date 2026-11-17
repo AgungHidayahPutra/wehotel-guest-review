@@ -1,0 +1,514 @@
+/* WE HOTEL — Ringkasan versi prototype. Tidak memengaruhi halaman Analitik. */
+.wha .wov-page {
+    color: #20384f;
+    font-family: "DM Sans", sans-serif;
+}
+.wov-page * {
+    box-sizing: border-box;
+}
+.wov-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 23px;
+}
+.wov-eyebrow {
+    color: #648eaa;
+    letter-spacing: 0.16em;
+    font-size: 10px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.wov-heading h1 {
+    color: #20374c;
+    font:
+        650 clamp(29px, 2.65vw, 42px)/1.17 "Outfit",
+        sans-serif;
+    letter-spacing: -0.045em;
+    margin: 0;
+}
+.wov-heading h1 span {
+    color: #d4af69;
+}
+.wov-heading p {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #879bac;
+}
+.wov-date-pill,
+.wov-panel-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 14px;
+    background: #fff;
+    color: #68859b;
+    border: 1px solid #dfe8ef;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+.wov-info {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 15px 16px;
+    margin-bottom: 22px;
+    background: #edf5fa;
+    border: 1px solid #dcebf4;
+    border-radius: 11px;
+    color: #567f9f;
+    font-size: 11px;
+    line-height: 1.8;
+}
+.wov-info svg {
+    flex: 0 0 auto;
+    margin-top: 1px;
+}
+.wov-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 21px;
+}
+.wov-stat,
+.wov-panel {
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #dfe9f0;
+    border-radius: 17px;
+    box-shadow: 0 12px 30px rgba(25, 44, 67, 0.035);
+}
+.wov-stat {
+    padding: 21px;
+}
+.wov-stat-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+.wov-stat-head > span {
+    color: #708da3;
+    font-size: 11px;
+    font-weight: 800;
+}
+.wov-stat-head i {
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: #edf4f9;
+    color: #527f9d;
+    font-style: normal;
+    flex: 0 0 auto;
+}
+.wov-stat:nth-child(2) .wov-stat-head i {
+    color: #bc9146;
+    background: #fcf5e6;
+}
+.wov-stat:nth-child(4) .wov-stat-head i {
+    color: #b97761;
+    background: #faeeea;
+}
+.wov-value {
+    font:
+        650 39px/1.16 "Outfit",
+        sans-serif;
+    letter-spacing: -0.055em;
+    margin-top: 16px;
+    color: #203a52;
+}
+.wov-value small {
+    font:
+        500 12px "DM Sans",
+        sans-serif;
+    letter-spacing: 0;
+    color: #9baebc;
+    margin-left: 5px;
+}
+.wov-stat-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    margin-top: 16px;
+}
+.wov-stat-bottom > span {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 7px;
+    background: #eaf4fa;
+    border-radius: 5px;
+    color: #527f9d;
+    font-size: 10px;
+    font-weight: 800;
+}
+.wov-stat-bottom small {
+    color: #9aadbb;
+    font-size: 10px;
+    line-height: 1.6;
+}
+.wov-main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.22fr) minmax(0, 0.85fr);
+    gap: 20px;
+}
+.wov-panel {
+    padding: 25px;
+}
+.wov-panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+.wov-panel-head h2 {
+    font:
+        650 18px/1.2 "Outfit",
+        sans-serif;
+    color: #264158;
+    margin: 0;
+}
+.wov-panel-head p {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 7px;
+    color: #8da3b3;
+}
+.wov-panel-pill {
+    background: #f4f8fa;
+    padding: 9px 10px;
+    border-color: #e6eef3;
+    font-size: 10px;
+}
+.wov-chart-wrap {
+    width: 100%;
+}
+.wov-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+.wov-chart-legend {
+    color: #7390a5;
+    font-size: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 6px;
+}
+.wov-chart-legend i {
+    width: 19px;
+    height: 3px;
+    background: #527f9e;
+    border-radius: 3px;
+}
+.wov-chart-hint {
+    font-size: 10px;
+    line-height: 1.65;
+    color: #8ca0af;
+    margin-top: 12px;
+}
+.wov-categories {
+    display: grid;
+    gap: 22px;
+    margin-top: 7px;
+}
+.wov-category-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 11px;
+    color: #617e94;
+    font-size: 11px;
+}
+.wov-category-title strong {
+    color: #365b78;
+    font-weight: 800;
+    white-space: nowrap;
+}
+.wov-category-title small {
+    color: #9bb0bd;
+    font-size: 10px;
+    font-weight: 400;
+}
+.wov-track {
+    height: 8px;
+    border-radius: 20px;
+    background: #e9f0f4;
+    overflow: hidden;
+}
+.wov-track div {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #385d7c, #96b7c9);
+}
+.wov-recent-panel {
+    margin-top: 20px;
+}
+.wov-more {
+    color: #477697;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+}
+.wov-more:hover {
+    color: #182d43;
+}
+.wov-review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+.wov-review {
+    background: #f9fbfc;
+    border: 1px solid #e0eaf0;
+    border-radius: 12px;
+    min-width: 0;
+    padding: 19px;
+}
+.wov-review-top {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+.wov-review-avatar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 39px;
+    height: 39px;
+    background: #e9f2f7;
+    color: #527b9a;
+    font:
+        650 14px "Outfit",
+        sans-serif;
+    border-radius: 50%;
+}
+.wov-review-meta {
+    flex: 1;
+    min-width: 0;
+}
+.wov-review-meta strong {
+    color: #2d4962;
+    font-size: 11px;
+    display: block;
+    overflow-wrap: anywhere;
+}
+.wov-review-meta small {
+    display: block;
+    margin-top: 6px;
+    color: #90a7b8;
+    line-height: 1.5;
+    font-size: 9px;
+}
+.wov-review-score {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: #b99550;
+    flex: 0 0 auto;
+    font-size: 11px;
+    font-weight: 800;
+}
+.wov-review > p {
+    color: #748fa3;
+    font-size: 11px;
+    line-height: 1.8;
+    margin: 15px 0 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+.wov-empty {
+    color: #90a6b7;
+    font-size: 12px;
+    line-height: 1.7;
+    padding: 12px 0;
+}
+.wov-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: #9babba;
+    font-size: 10px;
+    margin-top: 25px;
+}
+@media (max-width: 1200px) {
+    .wov-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .wov-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 830px) {
+    .wov-review-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 520px) {
+    .wov-heading h1 {
+        font-size: 28px;
+    }
+    .wov-stats {
+        gap: 10px;
+    }
+    .wov-stat {
+        padding: 15px;
+    }
+    .wov-value {
+        font-size: 30px;
+    }
+    .wov-panel {
+        padding: 17px;
+    }
+    .wov-panel-head {
+        flex-wrap: wrap;
+    }
+}
+
+/* =========================================
+   WE HOTEL — KPI TREND & SCORE GROUPS
+   ========================================= */
+
+.wov-stat-bottom > span.wov-delta {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 750;
+    line-height: 1.45;
+    border-radius: 6px;
+    padding: 6px 8px;
+}
+
+.wov-delta--good {
+    color: #287b5f !important;
+    background: #eaf6f0 !important;
+}
+
+.wov-delta--bad {
+    color: #b6534b !important;
+    background: #fbeeea !important;
+}
+
+.wov-delta--neutral {
+    color: #627e91 !important;
+    background: #edf3f7 !important;
+}
+
+.wov-stat-context {
+    margin: 10px 0 0;
+    color: #859bab;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.wov-score-groups {
+    display: grid;
+    grid-template-columns:
+        minmax(190px, 1.3fr)
+        repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    align-items: stretch;
+    padding: 14px;
+    margin: -2px 0 21px;
+    border: 1px solid #dfe9f0;
+    border-radius: 14px;
+    background: #ffffff;
+}
+
+.wov-score-groups-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 8px;
+}
+
+.wov-score-groups-heading strong {
+    color: #29465d;
+    font-size: 12px;
+}
+
+.wov-score-groups-heading small {
+    color: #8fa4b4;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.wov-score-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px 8px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f4f8fa;
+}
+
+.wov-score-group span {
+    color: #657e91;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.wov-score-group strong {
+    font-size: 20px;
+    font-weight: 750;
+    color: #29465d;
+}
+
+.wov-score-group small {
+    width: 100%;
+    font-size: 10px;
+    color: #91a4b2;
+}
+
+.wov-score-group--good {
+    background: #eef7f3;
+}
+
+.wov-score-group--good strong {
+    color: #287b5f;
+}
+
+.wov-score-group--medium {
+    background: #fbf6eb;
+}
+
+.wov-score-group--medium strong {
+    color: #ae8544;
+}
+
+.wov-score-group--bad {
+    background: #fcf0ed;
+}
+
+.wov-score-group--bad strong {
+    color: #b6534b;
+}
+
+@media (max-width: 1100px) {
+    .wov-score-groups {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .wov-score-groups {
+        grid-template-columns: 1fr;
+    }
+}
