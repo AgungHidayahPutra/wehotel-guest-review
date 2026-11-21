@@ -71,7 +71,7 @@
     height: 100vh;
     min-height: 680px;
     overflow: hidden;
-    background: var(--wh-primary, #192C43);
+    background: var(--wh-primary, #192c43);
     color: #fff;
 }
 
@@ -1594,5 +1594,151 @@
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* ==========================================
+   REQUIRED SUGGESTIONS CARD
+   ========================================== */
+
+.wh-review-feedback .wh-suggestion-card {
+    margin-top: 36px;
+    padding: 25px;
+
+    border: 1px solid #e7d8b8;
+    border-left: 4px solid #d4af69;
+    border-radius: 16px;
+
+    background: #fcf8f0;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.wh-suggestion-card:focus-within {
+    border-color: #c6a467;
+
+    box-shadow: 0 0 0 4px rgba(212, 175, 105, 0.1);
+}
+
+/* HEADER */
+
+.wh-suggestion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.wh-suggestion-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wh-suggestion-title svg {
+    flex-shrink: 0;
+    color: #b08d50;
+}
+
+.wh-suggestion-title h3 {
+    margin: 0;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: #29465d;
+}
+
+/* REQUIRED BADGE */
+
+.wh-suggestion-required {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 11px;
+
+    border: 1px solid #ead9b5;
+    border-radius: 999px;
+
+    background: #f5ead5;
+    color: #9b763c;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+/* QUESTION LABEL */
+
+.wh-suggestion-card label {
+    color: #36516c;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.wh-suggestion-description {
+    margin: 7px 0 14px !important;
+
+    color: #8d795b;
+
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* TEXTAREA */
+
+.wh-review-feedback .wh-suggestion-card textarea {
+    min-height: 130px;
+
+    border: 1px solid #e1d3b6;
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.wh-review-feedback .wh-suggestion-card textarea:focus {
+    border-color: #c6a467;
+
+    outline: none;
+
+    box-shadow: 0 0 0 3px rgba(212, 175, 105, 0.12);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+    .wh-review-feedback .wh-suggestion-card {
+        margin-top: 30px;
+        padding: 18px;
+
+        border-radius: 13px;
+    }
+
+    .wh-suggestion-title h3 {
+        font-size: 17px;
+    }
+
+    .wh-suggestion-required {
+        font-size: 9px;
+        padding: 5px 9px;
+    }
+
+    .wh-suggestion-description {
+        font-size: 11px;
     }
 }

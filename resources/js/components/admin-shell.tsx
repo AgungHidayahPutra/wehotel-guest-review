@@ -34,7 +34,8 @@ type Section =
     | 'reviews'
     | 'analytics'
     | 'categories'
-    | 'hotel-settings';
+    | 'hotel-settings'
+    | 'security';
 
 type Props = {
     hotel: AdminHotel;
@@ -80,6 +81,13 @@ const settingsMenu = [
         label: 'Pengaturan Hotel',
         href: '/admin/hotel-settings',
         icon: Building2,
+    },
+
+    {
+        section: 'security',
+        label: 'Keamanan Akun',
+        href: '/admin/security',
+        icon: ShieldCheck,
     },
 ] as const;
 
@@ -271,7 +279,7 @@ export default function AdminShell({
 
                     {/* GUEST REVIEW LINK */}
                     <Link
-                        href="/review"
+                        href="/"
                         className="wha-secondary-link"
                     >
                         <ArrowLeft size={17} />

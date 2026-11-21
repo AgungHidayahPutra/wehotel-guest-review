@@ -70,7 +70,7 @@ export default function GuestShell({
 
                 {/* HOTEL BRAND */}
                 <Link
-                    href="/review"
+                    href="/"
                     className="wh-hero-brand"
                 >
                     <div className="wh-hero-logo-box">
@@ -109,14 +109,14 @@ export default function GuestShell({
 
                     <h2>
                         {isId
-                            ? 'Pengalaman yang baik dimulai dari mendengarkan.'
-                            : 'Great experiences begin with listening.'}
+                            ? 'Senang menyambut Anda di WE Hotel.'
+                            : 'We are delighted to welcome you to WE Hotel.'}
                     </h2>
 
                     <p>
                         {isId
-                            ? 'Setiap cerita dari tamu membantu kami menciptakan pengalaman menginap yang lebih berkesan.'
-                            : 'Every guest story helps us create a more memorable stay.'}
+                            ? 'Terima kasih telah memilih kami sebagai tempat menginap. Semoga setiap momen bersama kami menjadi pengalaman yang menyenangkan dan berkesan.'
+                            : 'Thank you for choosing to stay with us. We hope every moment of your stay is a pleasant and memorable experience.'}
                     </p>
 
                     <span className="wh-location">

@@ -2264,12 +2264,9 @@ export default function Analytics({
                    ============================== */}
 
                 <div className="wvi-footer">
-                    <ShieldCheck
-                        size={15}
-                    />
+                    <ShieldCheck size={15} />
 
-                    WE HOTEL · Analitik internal
-                    · Termasuk data DEMO jika masih tersimpan
+                    WE HOTEL · Guest Experience Analytics
                 </div>
             </div>
         </AdminShell>

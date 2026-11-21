@@ -1,0 +1,105 @@
+/* Tambahan untuk resources/css/wehotel-security.css. Gaya dasar tetap dipakai. */
+.whsec-rotation {
+    margin-top: 26px;
+    padding: 23px;
+    border-radius: 18px;
+    border: 1px solid #d7e0e9;
+    background: linear-gradient(145deg, #f7f9fc, #f0f5fa);
+    color: #213650;
+}
+.whsec-rotation-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.whsec-rotation-heading > svg {
+    flex: none;
+    margin-top: 3px;
+    color: #50728f;
+}
+.whsec-rotation-heading h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+.whsec-rotation-heading p {
+    margin: 8px 0 0;
+    font-size: 13px;
+    line-height: 1.65;
+    color: #607589;
+}
+.whsec-rotation-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 19px;
+}
+.whsec-rotation-form {
+    margin-top: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+.whsec-rotation-info {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #566a7e;
+}
+.whsec-rotation-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+.whsec-rotation-options button {
+    border: 1px solid #c8d3df;
+    background: white;
+    color: #31485d;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+}
+.whsec-rotation-options button.is-selected {
+    border-color: #284a6a;
+    background: #e6edf5;
+    color: #173755;
+}
+.whsec-rotation-options button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+.whsec-rotation-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.whsec-rotation-actions .whsec-button,
+.whsec-rotation-actions .whsec-secondary {
+    display: inline-flex;
+    gap: 9px;
+    justify-content: center;
+    align-items: center;
+}
+.whsec-rotation-qr {
+    align-self: flex-start;
+}
+.whsec-rotation-qr img {
+    max-width: 190px;
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 600px) {
+    .whsec-rotation {
+        padding: 17px;
+    }
+    .whsec-rotation-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .whsec-rotation-actions button {
+        width: 100%;
+    }
+}

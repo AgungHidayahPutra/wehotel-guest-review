@@ -71,11 +71,16 @@ const translations = {
             'Masukan jujur Anda membantu kami meningkatkan kualitas pelayanan.',
         feedbackSectionTitle: 'Sedikit lagi, selesai!',
         questionsAnswered: 'pertanyaan utama terisi',
-        questionHint: 'Minimal jawab satu dari tiga pertanyaan berikut.',
+        questionHint: 'Jawab minimal satu dari tiga pertanyaan berikut. Kolom saran dan masukan wajib diisi.',
         q1: 'Apa hal yang paling Anda sukai selama menginap?',
         q2: 'Apa yang menurut Anda perlu kami tingkatkan?',
         q3: 'Apakah ada pengalaman yang kurang menyenangkan?',
         q4: 'Adakah saran atau masukan untuk WE HOTEL?',
+        suggestionTitle: 'Saran dan Masukan',
+        suggestionDescription:
+            'Saran Anda membantu kami meningkatkan kualitas pelayanan.',
+        suggestionPlaceholder:
+            'Tuliskan saran atau masukan Anda di sini...',
         required: 'Wajib diisi',
         answerPlaceholder: 'Tulis pengalaman Anda di sini...',
 
@@ -98,7 +103,7 @@ const translations = {
         errorRating:
             'Mohon jawab semua kategori penilaian.',
         errorFeedback:
-            'Isi minimal satu pertanyaan nomor 1–3 dan wajib isi saran pada nomor 4.',
+            'Mohon jawab minimal satu dari tiga pertanyaan utama dan isi kolom saran dan masukan.',
         errorContact:
             'Mohon masukkan WhatsApp atau email yang valid.',
     },
@@ -139,11 +144,16 @@ const translations = {
             'Your honest feedback helps us improve the quality of our service.',
         feedbackSectionTitle: 'Almost there!',
         questionsAnswered: 'main questions answered',
-        questionHint: 'Answer at least one of the following three questions.',
+        questionHint: 'Answer at least one of the following three questions. The suggestions and feedback field is required.',
         q1: 'What did you enjoy most during your stay?',
         q2: 'What do you think we should improve?',
         q3: 'Did you have any unpleasant experiences?',
         q4: 'Do you have any suggestions for WE HOTEL?',
+        suggestionTitle: 'Suggestions and Feedback',
+        suggestionDescription:
+            'Your suggestions help us improve the quality of our service.',
+        suggestionPlaceholder:
+            'Write your suggestions or feedback here...',
         required: 'Required',
         answerPlaceholder: 'Share your experience here...',
 
@@ -166,7 +176,7 @@ const translations = {
         errorRating:
             'Please complete every rating category.',
         errorFeedback:
-            'Answer at least one of questions 1–3 and complete question 4.',
+            'Please answer at least one of the three main questions and complete the suggestions and feedback field.',
         errorContact:
             'Please enter a valid WhatsApp number or email address.',
     },
@@ -388,7 +398,7 @@ export default function Review({ hotel, categories }: Props) {
             return;
         }
 
-        form.post('/review', {
+        form.post('/', {
             preserveScroll: true,
             onError: (errors) => {
                 if (
@@ -771,7 +781,6 @@ export default function Review({ hotel, categories }: Props) {
                             ['liked', t.q1],
                             ['improvement', t.q2],
                             ['unpleasant', t.q3],
-                            ['suggestions', t.q4],
                         ] as const
                     ).map(([key, question], index) => (
                         <div className="wh-field wh-answer-field" key={key}>
@@ -779,14 +788,7 @@ export default function Review({ hotel, categories }: Props) {
                                 <span className="wh-question-number">
                                     0{index + 1}
                                 </span>
-
                                 {question}
-
-                                {key === 'suggestions' && (
-                                    <b>
-                                        * {t.required}
-                                    </b>
-                                )}
                             </label>
 
                             <textarea
@@ -810,6 +812,54 @@ export default function Review({ hotel, categories }: Props) {
                             )}
                         </div>
                     ))}
+
+                    {/* SARAN DAN MASUKAN WAJIB */}
+                    <div className="wh-field wh-answer-field wh-suggestion-card">
+                        <div className="wh-suggestion-header">
+                            <div className="wh-suggestion-title">
+                                <Sparkles size={20} />
+                                <h3>{t.suggestionTitle}</h3>
+                            </div>
+                            <span className="wh-suggestion-required">
+                                * {t.required}
+                            </span>
+                        </div>
+
+                        <label htmlFor="answer-suggestions">
+                            {t.q4}
+                        </label>
+
+                        <p
+                            id="suggestion-description"
+                            className="wh-suggestion-description"
+                        >
+                            {t.suggestionDescription}
+                        </p>
+
+                        <textarea
+                            id="answer-suggestions"
+                            rows={3}
+                            maxLength={1500}
+                            minLength={2}
+                            required
+                            aria-describedby="suggestion-description"
+                            aria-invalid={Boolean(fieldErrors['answers.suggestions'])}
+                            placeholder={t.suggestionPlaceholder}
+                            value={form.data.answers.suggestions}
+                            onChange={(event) =>
+                                form.setData('answers', {
+                                    ...form.data.answers,
+                                    suggestions: event.target.value,
+                                })
+                            }
+                        />
+
+                        {fieldErrors['answers.suggestions'] && (
+                            <p className="wh-error">
+                                {fieldErrors['answers.suggestions']}
+                            </p>
+                        )}
+                    </div>
 
                     <div className="wh-contact-card">
                         <h3>{t.contactQuestion}</h3>

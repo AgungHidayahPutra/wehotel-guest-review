@@ -1,3 +1,4 @@
+import ReviewExport from '../../components/review-export';
 import { Head, Link, router } from '@inertiajs/react';
 import {
     ArrowLeft,
@@ -571,10 +572,18 @@ export default function Reviews({
                             </p>
                         </div>
 
-                        <span className="whr-private-badge">
-                            <LockKeyhole size={13} />
-                            Khusus Admin
-                        </span>
+                        <div className="whr-panel-actions">
+                            <span className="whr-private-badge">
+                                <LockKeyhole size={13} />
+                                Khusus Admin
+                            </span>
+
+                            <ReviewExport
+                                filters={filters}
+                                filteredTotal={reviews.total}
+                                totalReviews={totalReviews}
+                            />
+                        </div>
                     </div>
 
                     {reviews.data.length === 0 ? (

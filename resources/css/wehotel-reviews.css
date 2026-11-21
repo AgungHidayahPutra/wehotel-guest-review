@@ -863,3 +863,719 @@
         animation: none;
     }
 }
+
+/* ==========================================
+   WE HOTEL - REVIEW EXPORT
+   ========================================== */
+
+.whr-panel-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.whr-export-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   EXPORT DIALOG
+   ========================================== */
+
+.whr-export-dialog {
+    position: fixed;
+    inset: 0;
+
+    width: min(580px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+
+    max-height: calc(100dvh - 40px);
+
+    margin: auto;
+    padding: 0;
+
+    border: 1px solid #dce7ef;
+    border-radius: 20px;
+
+    color: #29465d;
+    background: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 24px 80px rgba(25, 44, 67, 0.24),
+        0 8px 24px rgba(25, 44, 67, 0.08);
+}
+
+.whr-export-dialog[open] {
+    animation: whr-export-enter 0.24s ease-out;
+}
+
+.whr-export-dialog::backdrop {
+    background: rgba(16, 33, 51, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+@keyframes whr-export-enter {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.whr-export-form {
+    display: flex;
+    flex-direction: column;
+
+    max-height: calc(100dvh - 42px);
+    min-height: 0;
+}
+
+/* ==========================================
+   MODAL HEADER
+   ========================================== */
+
+.whr-export-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    flex-shrink: 0;
+
+    padding: 23px 25px;
+
+    border-bottom: 1px solid #e4edf3;
+}
+
+.whr-export-header-icon {
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 47px;
+    height: 47px;
+
+    border-radius: 13px;
+
+    color: #365b78;
+    background: #edf3f7;
+}
+
+.whr-export-heading {
+    flex: 1;
+    min-width: 0;
+}
+
+.whr-export-heading h2 {
+    margin: 0 0 5px;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.3;
+
+    color: #192c43;
+}
+
+.whr-export-heading p {
+    margin: 0;
+
+    color: #7891a3;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.whr-export-close {
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 33px;
+    height: 33px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 9px;
+
+    color: #7891a3;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        color 0.18s ease;
+}
+
+.whr-export-close:hover {
+    color: #192c43;
+    background: #edf3f7;
+}
+
+/* ==========================================
+   MODAL BODY
+   ========================================== */
+
+.whr-export-body {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+
+    flex: 1;
+    min-height: 0;
+
+    padding: 23px 25px;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
+    scrollbar-color: #b7cbd9 transparent;
+}
+
+.whr-export-body fieldset {
+    min-width: 0;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+}
+
+.whr-export-body fieldset:disabled {
+    opacity: 0.7;
+}
+
+.whr-export-body legend {
+    display: block;
+
+    margin-bottom: 12px;
+    padding: 0;
+
+    color: #6d899f;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+/* ==========================================
+   FORMAT OPTIONS
+   ========================================== */
+
+.whr-export-formats {
+    display: grid;
+    gap: 9px;
+}
+
+.whr-export-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px;
+
+    border: 1px solid #e0e9f0;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.whr-export-option:hover {
+    border-color: #9db9cc;
+    background: #f7fafc;
+}
+
+.whr-export-option.is-selected {
+    border-color: #527f9e;
+    background: #f1f6f9;
+
+    box-shadow: inset 0 0 0 1px #527f9e;
+}
+
+.whr-export-format-icon {
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 41px;
+    height: 41px;
+
+    border: 1px solid #e1e9ef;
+    border-radius: 10px;
+
+    background: #ffffff;
+}
+
+.whr-export-option-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    flex: 1;
+    min-width: 0;
+}
+
+.whr-export-option-content strong {
+    color: #29465d;
+
+    font-size: 13px;
+    font-weight: 750;
+    line-height: 1.4;
+}
+
+.whr-export-option-content small {
+    color: #8199aa;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.whr-export-extension {
+    flex-shrink: 0;
+
+    padding: 4px 6px;
+
+    border-radius: 5px;
+
+    color: #6b889d;
+    background: #e8eff4;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* ==========================================
+   RADIO AND CHECKBOX
+   ========================================== */
+
+.whr-export-dialog input[type="radio"],
+.whr-export-dialog input[type="checkbox"] {
+    appearance: auto;
+
+    flex-shrink: 0;
+
+    width: 16px;
+    height: 16px;
+
+    margin: 0;
+
+    accent-color: #365b78;
+
+    cursor: pointer;
+}
+
+.whr-export-dialog input:disabled {
+    cursor: not-allowed;
+}
+
+.whr-export-dialog button:focus-visible,
+.whr-export-dialog input:focus-visible {
+    outline: 2px solid #527f9e;
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   EXPORT SCOPE
+   ========================================== */
+
+.whr-export-scopes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.whr-export-scope {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    padding: 13px;
+
+    border: 1px solid #e0e9f0;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.whr-export-scope.is-selected {
+    border-color: #8bafc3;
+    background: #f1f6f9;
+}
+
+.whr-export-scope input {
+    margin-top: 2px !important;
+}
+
+.whr-export-scope div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.whr-export-scope strong {
+    color: #365b78;
+
+    font-size: 12px;
+    font-weight: 750;
+    line-height: 1.5;
+}
+
+.whr-export-scope small {
+    color: #7891a3;
+
+    font-size: 11px;
+}
+
+.whr-export-hint {
+    margin: 10px 0 0;
+
+    color: #8199aa;
+
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   PRIVATE INFORMATION
+   ========================================== */
+
+.whr-export-privacy {
+    padding: 15px;
+
+    border: 1px solid #e1eaf0;
+    border-radius: 12px;
+
+    background: #f2f6f9;
+}
+
+.whr-export-privacy-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    color: #527f9e;
+
+    font-size: 12px;
+}
+
+.whr-export-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    color: #365b78;
+
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.6;
+
+    cursor: pointer;
+}
+
+.whr-export-checkbox input {
+    margin-top: 2px !important;
+}
+
+.whr-export-checkbox:has(input:disabled) {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.whr-export-privacy p {
+    margin: 9px 0 0;
+
+    padding-left: 26px;
+
+    color: #7c94a6;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   INFORMATION AND ERROR MESSAGE
+   ========================================== */
+
+.whr-export-notice,
+.whr-export-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.whr-export-notice {
+    border: 1px solid #ecdfcd;
+
+    color: #a17a4e;
+    background: #fbf6eb;
+}
+
+.whr-export-error {
+    border: 1px solid #f0d6d1;
+
+    color: #b6534b;
+    background: #fcf0ed;
+}
+
+.whr-export-notice svg,
+.whr-export-error svg {
+    flex-shrink: 0;
+
+    margin-top: 1px;
+}
+
+/* ==========================================
+   MODAL FOOTER
+   ========================================== */
+
+.whr-export-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    flex-shrink: 0;
+
+    padding: 18px 25px;
+
+    border-top: 1px solid #dfe9f0;
+
+    background: #f9fbfc;
+}
+
+.whr-export-total {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #6f96ae;
+}
+
+.whr-export-total span {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.whr-export-total strong {
+    color: #365b78;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.whr-export-total small {
+    color: #8199aa;
+
+    font-size: 10px;
+}
+
+.whr-export-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.whr-export-cancel,
+.whr-export-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 41px;
+
+    padding: 11px 16px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease;
+}
+
+.whr-export-cancel {
+    border: 1px solid #dce7ef;
+
+    color: #527f9e;
+    background: #ffffff;
+}
+
+.whr-export-cancel:hover:not(:disabled) {
+    background: #edf3f7;
+}
+
+.whr-export-download {
+    border: 1px solid #192c43;
+
+    color: #ffffff;
+    background: #192c43;
+}
+
+.whr-export-download:hover:not(:disabled) {
+    background: #365b78;
+    border-color: #365b78;
+}
+
+.whr-export-download:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.whr-export-cancel:disabled,
+.whr-export-download:disabled,
+.whr-export-close:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.whr-export-processing {
+    width: 100%;
+
+    color: #7891a3;
+
+    text-align: right;
+    font-size: 10px;
+}
+
+/* ==========================================
+   LOADING ANIMATION
+   ========================================== */
+
+.whr-export-spinner {
+    animation: whr-export-spin 0.9s linear infinite;
+}
+
+@keyframes whr-export-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 600px) {
+    .whr-panel-actions {
+        justify-content: flex-start;
+        gap: 8px;
+    }
+
+    .whr-export-dialog {
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+
+        max-height: calc(100dvh - 20px);
+
+        border-radius: 16px;
+    }
+
+    .whr-export-form {
+        max-height: calc(100dvh - 22px);
+    }
+
+    .whr-export-header,
+    .whr-export-body,
+    .whr-export-footer {
+        padding: 17px;
+    }
+
+    .whr-export-heading h2 {
+        font-size: 19px;
+    }
+
+    .whr-export-option {
+        padding: 10px;
+        gap: 9px;
+    }
+
+    .whr-export-extension {
+        display: none;
+    }
+
+    .whr-export-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .whr-export-actions {
+        width: 100%;
+    }
+
+    .whr-export-cancel {
+        flex: 1;
+    }
+
+    .whr-export-download {
+        flex: 2;
+    }
+
+    .whr-export-processing {
+        text-align: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .whr-export-scopes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whr-export-dialog[open] {
+        animation: none;
+    }
+
+    .whr-export-dialog * {
+        transition: none;
+    }
+}

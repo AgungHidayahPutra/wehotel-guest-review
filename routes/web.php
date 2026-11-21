@@ -1,29 +1,98 @@
 <?php
 
-use App\Http\Controllers\GuestReviewController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\ReviewsController;
-use App\Http\Controllers\Admin\RatingCategoriesController;
 use App\Http\Controllers\Admin\AnalyticsController;
+use App\Http\Controllers\Admin\AuthenticatorRotationController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HotelSettingsController;
+use App\Http\Controllers\Admin\RatingCategoriesController;
+use App\Http\Controllers\Admin\ReviewExportController;
+use App\Http\Controllers\Admin\ReviewsController;
+use App\Http\Controllers\Admin\SecurityController;
+use App\Http\Controllers\GuestReviewController;
 use App\Http\Middleware\EnsureHotelAdmin;
 use Illuminate\Support\Facades\Route;
 
-Route::inertia('/', 'welcome')->name('home');
+/*
+|--------------------------------------------------------------------------
+| PUBLIC GUEST REVIEW
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/', [GuestReviewController::class, 'create'])
+    ->name('home');
+
+Route::post('/', [GuestReviewController::class, 'store'])
+    ->middleware('throttle:6,1')
+    ->name('review.store');
+
+Route::get('/thanks', [GuestReviewController::class, 'thanks'])
+    ->name('review.thanks');
+
+/*
+|--------------------------------------------------------------------------
+| DASHBOARD REDIRECT
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/dashboard', function () {
     return redirect()->route('admin.dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware([
+    'auth',
+    'verified',
+    EnsureHotelAdmin::class,
+])->name('dashboard');
 
-Route::middleware(['auth', 'verified', EnsureHotelAdmin::class])
+/*
+|--------------------------------------------------------------------------
+| ADMINISTRATOR WORKSPACE
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware([
+    'auth',
+    'verified',
+    EnsureHotelAdmin::class,
+])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
-        Route::get('/dashboard', DashboardController::class)->name('dashboard');
-        Route::get('/reviews', [ReviewsController::class, 'index'])->name('reviews.index');
+
+        /*
+        |----------------------------------------------------------
+        | DASHBOARD
+        |----------------------------------------------------------
+        */
+
+        Route::get('/dashboard', DashboardController::class)
+            ->name('dashboard');
+
+        /*
+        |----------------------------------------------------------
+        | GUEST REVIEWS
+        |----------------------------------------------------------
+        */
+
+        Route::get('/reviews', [ReviewsController::class, 'index'])
+            ->name('reviews.index');
+
+        Route::post('/reviews/export', ReviewExportController::class)
+            ->middleware('throttle:5,1')
+            ->name('reviews.export');
+
+        /*
+        |----------------------------------------------------------
+        | ANALYTICS
+        |----------------------------------------------------------
+        */
 
         Route::get('/analytics', AnalyticsController::class)
             ->name('analytics');
+
+        /*
+        |----------------------------------------------------------
+        | RATING CATEGORIES
+        |----------------------------------------------------------
+        */
 
         Route::get('/categories', [RatingCategoriesController::class, 'index'])
             ->name('categories.index');
@@ -40,26 +109,59 @@ Route::middleware(['auth', 'verified', EnsureHotelAdmin::class])
         Route::delete('/categories/{category}', [RatingCategoriesController::class, 'destroy'])
             ->name('categories.destroy');
 
+        /*
+        |----------------------------------------------------------
+        | HOTEL SETTINGS
+        |----------------------------------------------------------
+        */
 
         Route::get('/hotel-settings', [HotelSettingsController::class, 'index'])
             ->name('hotel-settings.index');
 
         Route::post('/hotel-settings', [HotelSettingsController::class, 'update'])
             ->name('hotel-settings.update');
+
+        /*
+        |----------------------------------------------------------
+        | ACCOUNT SECURITY
+        |----------------------------------------------------------
+        */
+
+        Route::get('/security', SecurityController::class)
+            ->name('security');
+
+        /*
+        |----------------------------------------------------------
+        | AUTHENTICATOR ROTATION / RECOVERY
+        |----------------------------------------------------------
+        */
+
+        Route::post(
+            '/security/authenticator/prepare',
+            [AuthenticatorRotationController::class, 'prepare']
+        )
+            ->middleware('throttle:5,1')
+            ->name('security.authenticator.prepare');
+
+        Route::post(
+            '/security/authenticator/confirm',
+            [AuthenticatorRotationController::class, 'confirm']
+        )
+            ->middleware('throttle:5,1')
+            ->name('security.authenticator.confirm');
+
+        Route::post(
+            '/security/authenticator/cancel',
+            [AuthenticatorRotationController::class, 'cancel']
+        )
+            ->middleware('throttle:10,1')
+            ->name('security.authenticator.cancel');
     });
 
+/*
+|--------------------------------------------------------------------------
+| ACCOUNT SETTINGS
+|--------------------------------------------------------------------------
+*/
 
-// Halaman review tamu - tidak memerlukan login
-Route::get('/review', [GuestReviewController::class, 'create'])
-    ->name('review.create');
-
-// Menyimpan review tamu
-Route::post('/review', [GuestReviewController::class, 'store'])
-    ->middleware('throttle:6,1')
-    ->name('review.store');
-
-// Halaman setelah review berhasil dikirim
-Route::get('/review/thanks', [GuestReviewController::class, 'thanks'])
-    ->name('review.thanks');
-
-require __DIR__ . '/settings.php';
+require __DIR__.'/settings.php';

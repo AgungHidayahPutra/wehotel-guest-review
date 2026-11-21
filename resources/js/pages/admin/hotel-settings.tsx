@@ -238,7 +238,7 @@ export default function HotelSettings({
                     </div>
 
                     <Link
-                        href="/review"
+                        href="/"
                         className="whs-preview-link"
                     >
                         Lihat halaman tamu

@@ -1142,9 +1142,7 @@ export default function Dashboard({
 
                 <div className="wov-footer">
                     <ShieldCheck size={15} />
-                    Dashboard internal WE HOTEL ·
-                    Data dari MySQL, termasuk data
-                    DEMO jika masih tersimpan.
+                    WE HOTEL · Guest Experience Management
                 </div>
             </div>
         </AdminShell>

@@ -1,0 +1,1055 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap");
+
+.whl-page {
+    --whl-primary: #192c43;
+    --whl-secondary: #8bafc3;
+    --whl-accent: #d4af69;
+    --whl-text: #29465d;
+    --whl-muted: #7891a3;
+
+    display: grid;
+    grid-template-columns: 43% 57%;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background: #ffffff;
+    color: var(--whl-text);
+
+    font-family: "DM Sans", sans-serif;
+    color-scheme: light;
+}
+
+.whl-page *,
+.whl-page *::before,
+.whl-page *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   LEFT PANEL
+   ========================================== */
+
+.whl-brand-panel {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    padding: 48px clamp(32px, 4vw, 72px);
+
+    background:
+        radial-gradient(ellipse at 100% 0%, #365b78 0%, transparent 65%),
+        linear-gradient(155deg, #20394f, #192c43 55%, #112235);
+
+    color: #ffffff;
+
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* ==========================================
+   DECORATIVE RINGS
+   ========================================== */
+
+.whl-ring {
+    position: absolute;
+    z-index: -1;
+
+    border: 1px solid rgba(177, 204, 222, 0.12);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.whl-ring-one {
+    width: 570px;
+    height: 570px;
+
+    top: -235px;
+    right: -250px;
+}
+
+.whl-ring-two {
+    width: 420px;
+    height: 420px;
+
+    top: -160px;
+    right: -175px;
+}
+
+.whl-ring-three {
+    width: 600px;
+    height: 600px;
+
+    bottom: -420px;
+    left: -300px;
+}
+
+/* ==========================================
+   BRAND IDENTITY
+   ========================================== */
+
+.whl-brand {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.whl-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 156px;
+
+    padding: 14px 16px;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+}
+
+.whl-logo img {
+    display: block;
+
+    width: 100%;
+    max-height: 58px;
+
+    object-fit: contain;
+}
+
+.whl-brand-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.whl-brand-copy strong {
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+}
+
+.whl-brand-copy span {
+    color: #b5c9d6;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* ==========================================
+   LEFT PANEL CONTENT
+   ========================================== */
+
+.whl-brand-content {
+    max-width: 560px;
+
+    padding: 75px 0;
+
+    animation: whl-rise 0.8s ease both;
+}
+
+.whl-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin-bottom: 28px;
+
+    color: #d9e6ee;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    line-height: 1.7;
+}
+
+.whl-eyebrow i {
+    display: block;
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 2px;
+
+    background: var(--whl-accent);
+}
+
+.whl-brand-content h2 {
+    margin: 0 0 27px;
+
+    color: #ffffff;
+
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(36px, 3.5vw, 62px);
+    font-weight: 700;
+    letter-spacing: -1.8px;
+    line-height: 1.15;
+}
+
+.whl-brand-content p {
+    max-width: 450px;
+
+    margin: 0;
+
+    color: #bdcfdc;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.95;
+}
+
+.whl-location {
+    display: block;
+
+    margin-top: 36px;
+
+    color: #dce7ee;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* ==========================================
+   BRAND FOOTER
+   ========================================== */
+
+.whl-brand-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #a7bfce;
+}
+
+.whl-brand-footer svg {
+    flex-shrink: 0;
+}
+
+.whl-brand-footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.whl-brand-footer strong {
+    color: #dbe7ef;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.whl-brand-footer span {
+    color: #99b1c2;
+
+    font-size: 10px;
+}
+
+/* ==========================================
+   RIGHT PANEL
+   ========================================== */
+
+.whl-main {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background: #ffffff;
+}
+
+/* ==========================================
+   RIGHT HEADER
+   ========================================== */
+
+.whl-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+    gap: 20px;
+
+    padding: 28px clamp(24px, 5vw, 85px);
+
+    border-bottom: 1px solid #edf1f5;
+}
+
+.whl-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.whl-header-brand img {
+    width: 126px;
+    height: 48px;
+
+    object-fit: contain;
+}
+
+.whl-header-brand span {
+    color: #648097;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.whl-secure {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #7896aa;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+/* ==========================================
+   MAIN LOGIN CONTENT
+   ========================================== */
+
+.whl-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 1;
+
+    padding: 55px 36px;
+}
+
+.whl-login-card {
+    width: 100%;
+    max-width: 460px;
+
+    animation: whl-rise 0.8s ease both;
+}
+
+@keyframes whl-rise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   LOGIN HEADING
+   ========================================== */
+
+.whl-login-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 57px;
+    height: 57px;
+
+    margin-bottom: 26px;
+
+    border: 1px solid #e0eaf1;
+    border-radius: 16px;
+
+    background: #eff5f9;
+    color: #527f9e;
+}
+
+.whl-login-heading > span {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: #7193a8;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.whl-login-heading h1 {
+    margin: 0 0 15px;
+
+    color: #192c43;
+
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(30px, 3vw, 45px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -1.2px;
+}
+
+.whl-login-heading p {
+    margin: 0;
+
+    color: #7891a3;
+
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+/* ==========================================
+   LOGIN FORM
+   ========================================== */
+
+.whl-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    margin-top: 36px;
+}
+
+.whl-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.whl-field label {
+    color: #36516c;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.whl-field-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* ==========================================
+   FORM INPUT
+   ========================================== */
+
+.whl-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-height: 56px;
+
+    padding: 0 17px;
+
+    border: 1px solid #dce6ef;
+    border-radius: 11px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.whl-input-wrapper:focus-within {
+    border-color: #8bafc3;
+
+    box-shadow: 0 0 0 4px rgba(139, 175, 195, 0.13);
+}
+
+.whl-input-wrapper.has-error {
+    border-color: #c97870;
+}
+
+.whl-input-icon {
+    flex-shrink: 0;
+
+    color: #91a9ba;
+}
+
+.whl-input-wrapper input {
+    flex: 1;
+
+    width: 100%;
+    min-width: 0;
+    height: 54px;
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+    color: #29465d;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    box-shadow: none;
+}
+
+.whl-input-wrapper input::placeholder {
+    color: #9bafbe;
+    opacity: 1;
+}
+
+.whl-input-wrapper input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.whl-password-toggle {
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 28px;
+    height: 35px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 5px;
+
+    color: #8da5b6;
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.whl-password-toggle:hover {
+    color: #365b78;
+}
+
+/* ==========================================
+   FORGOT PASSWORD
+   ========================================== */
+
+.whl-forgot-password {
+    color: #527f9e;
+
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.whl-forgot-password:hover {
+    color: #192c43;
+    text-decoration: underline;
+}
+
+/* ==========================================
+   REMEMBER ME
+   ========================================== */
+
+.whl-remember {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 10px;
+
+    color: #648197;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.whl-remember input {
+    appearance: auto;
+
+    width: 16px;
+    height: 16px;
+
+    margin: 0;
+
+    accent-color: #365b78;
+
+    cursor: pointer;
+}
+
+/* ==========================================
+   SUBMIT BUTTON
+   ========================================== */
+
+.whl-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    width: 100%;
+    min-height: 55px;
+
+    padding: 16px 20px;
+
+    border: 1px solid transparent;
+    border-radius: 11px;
+
+    background: #192c43;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.whl-submit:hover:not(:disabled) {
+    background: #294861;
+
+    box-shadow: 0 8px 20px rgba(25, 44, 67, 0.15);
+
+    transform: translateY(-2px);
+}
+
+.whl-submit:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.whl-submit:disabled {
+    background: #8b9dab;
+
+    cursor: not-allowed;
+}
+
+.whl-spinner {
+    animation: whl-spin 0.9s linear infinite;
+}
+
+@keyframes whl-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================
+   VALIDATION MESSAGE
+   ========================================== */
+
+.whl-error {
+    margin: 0;
+
+    color: #b6534b;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.whl-status {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 22px;
+
+    padding: 13px 15px;
+
+    border: 1px solid #dcebe3;
+    border-radius: 10px;
+
+    color: #2a8163;
+    background: #edf7f2;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.whl-status svg {
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   PRIVACY INFORMATION
+   ========================================== */
+
+.whl-privacy {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 9px;
+
+    margin-top: 23px;
+
+    color: #8da5b6;
+}
+
+.whl-privacy svg {
+    flex-shrink: 0;
+
+    margin-top: 1px;
+}
+
+.whl-privacy p {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   BACK LINK
+   ========================================== */
+
+.whl-back-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 27px;
+
+    color: #64839b;
+
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.whl-back-link:hover {
+    color: #192c43;
+}
+
+/* ==========================================
+   KEYBOARD ACCESSIBILITY
+   ========================================== */
+
+.whl-page button:focus-visible,
+.whl-page a:focus-visible,
+.whl-remember input:focus-visible {
+    outline: 2px solid #527f9e;
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   RIGHT FOOTER
+   ========================================== */
+
+.whl-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    flex-shrink: 0;
+
+    gap: 15px;
+
+    margin: 0 clamp(24px, 5vw, 85px);
+
+    padding: 24px 0;
+
+    border-top: 1px solid #e7edf2;
+
+    color: #92a6b6;
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+   ========================================== */
+
+@media (max-width: 1100px) {
+    .whl-page {
+        grid-template-columns: 40% 60%;
+    }
+
+    .whl-brand-panel {
+        padding: 35px;
+    }
+
+    .whl-brand {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .whl-header-brand span {
+        display: none;
+    }
+
+    .whl-brand-content h2 {
+        font-size: 40px;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+@media (max-width: 760px) {
+    .whl-page {
+        display: block;
+    }
+
+    .whl-brand-panel {
+        display: none;
+    }
+
+    .whl-main {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .whl-header {
+        padding: 20px 25px;
+    }
+
+    .whl-header-brand img {
+        width: 120px;
+    }
+
+    .whl-main-content {
+        padding: 45px 25px;
+    }
+
+    .whl-login-card {
+        max-width: 440px;
+    }
+
+    .whl-login-heading h1 {
+        font-size: 36px;
+    }
+
+    .whl-footer {
+        justify-content: center;
+
+        margin: 0 25px;
+        padding: 19px 0;
+
+        text-align: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .whl-brand-content,
+    .whl-login-card {
+        animation: none;
+    }
+
+    .whl-page * {
+        transition: none;
+    }
+}
+
+/* ==========================================
+   LOGIN DESKTOP REFINEMENT
+   ========================================== */
+
+@media (min-width: 761px) {
+    .whl-brand-panel {
+        padding: 35px clamp(32px, 4vw, 65px);
+    }
+
+    .whl-brand-content {
+        padding: 35px 0;
+    }
+
+    .whl-brand-content h2 {
+        font-size: clamp(34px, 3.2vw, 54px);
+        line-height: 1.15;
+        margin-bottom: 22px;
+    }
+
+    .whl-brand-content p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .whl-eyebrow {
+        margin-bottom: 22px;
+    }
+
+    .whl-location {
+        margin-top: 26px;
+    }
+
+    .whl-brand-footer {
+        padding-top: 18px;
+    }
+
+    /* HEADER */
+
+    .whl-header {
+        padding: 19px clamp(24px, 5vw, 85px);
+    }
+
+    .whl-header-brand img {
+        height: 43px;
+    }
+
+    /* MAIN CONTENT */
+
+    .whl-main-content {
+        padding: 28px 36px;
+    }
+
+    .whl-login-card {
+        max-width: 435px;
+    }
+
+    .whl-login-icon {
+        width: 48px;
+        height: 48px;
+
+        margin-bottom: 18px;
+
+        border-radius: 13px;
+    }
+
+    .whl-login-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .whl-login-heading > span {
+        margin-bottom: 10px;
+    }
+
+    .whl-login-heading h1 {
+        font-size: clamp(28px, 2.7vw, 38px);
+        line-height: 1.2;
+
+        margin-bottom: 10px;
+    }
+
+    .whl-login-heading p {
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    /* FORM */
+
+    .whl-form {
+        margin-top: 25px;
+        gap: 19px;
+    }
+
+    .whl-field {
+        gap: 8px;
+    }
+
+    .whl-input-wrapper {
+        min-height: 49px;
+    }
+
+    .whl-input-wrapper input {
+        height: 47px;
+    }
+
+    .whl-submit {
+        min-height: 49px;
+        padding: 13px 20px;
+    }
+
+    /* PRIVACY AND BACK LINK */
+
+    .whl-privacy {
+        margin-top: 17px;
+    }
+
+    .whl-back-link {
+        margin-top: 17px;
+    }
+
+    /* FOOTER */
+
+    .whl-footer {
+        padding: 15px 0;
+    }
+}
+
+/* ==========================================
+   SHORT DESKTOP / LAPTOP SCREEN
+   ========================================== */
+
+@media (min-width: 761px) and (max-height: 800px) {
+    .whl-brand-panel {
+        padding-top: 27px;
+        padding-bottom: 27px;
+    }
+
+    .whl-brand-content {
+        padding: 25px 0;
+    }
+
+    .whl-brand-content h2 {
+        font-size: clamp(32px, 3vw, 46px);
+    }
+
+    .whl-header {
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .whl-main-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .whl-login-icon {
+        width: 43px;
+        height: 43px;
+
+        margin-bottom: 14px;
+    }
+
+    .whl-login-heading h1 {
+        font-size: 34px;
+    }
+
+    .whl-form {
+        margin-top: 20px;
+        gap: 15px;
+    }
+
+    .whl-input-wrapper {
+        min-height: 46px;
+    }
+
+    .whl-input-wrapper input {
+        height: 44px;
+    }
+
+    .whl-submit {
+        min-height: 46px;
+    }
+
+    .whl-privacy,
+    .whl-back-link {
+        margin-top: 13px;
+    }
+
+    .whl-footer {
+        padding: 12px 0;
+    }
+}

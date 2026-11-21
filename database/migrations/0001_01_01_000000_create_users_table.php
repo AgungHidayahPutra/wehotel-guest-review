@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -17,8 +18,18 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            // Role administrator WE HOTEL
             $table->boolean('is_admin')->default(false)->index();
+
+            // Remember token
             $table->rememberToken();
+
+            // Two-Factor Authentication (2FA)
+            $table->text('two_factor_secret')->nullable();
+            $table->text('two_factor_recovery_codes')->nullable();
+            $table->timestamp('two_factor_confirmed_at')->nullable();
+
             $table->timestamps();
         });
 

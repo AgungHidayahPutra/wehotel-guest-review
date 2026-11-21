@@ -118,7 +118,7 @@ export default function Thanks({ hotel, rating_summary }: Props) {
                         : 'Your review has been sent privately to WE HOTEL management.'}
                 </p>
 
-                <Link className="wh-primary-button wh-thanks-new-review" href="/review">
+                <Link className="wh-primary-button wh-thanks-new-review" href="/">
                     {isId ? 'Tulis penilaian baru' : 'Write another review'}
                     <ArrowRight size={18} />
                 </Link>
